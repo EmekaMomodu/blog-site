@@ -10,8 +10,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const credentials = JSON.parse(
-    fs.readFileSync('./credentials.json')
+    // fs.readFileSync('/home/emeka/projects/blog-site/my-blog-backend/credentials.json')
+    fs.readFileSync(path.join(__dirname, '../credentials.json'))
 );
+
 admin.initializeApp({
     credential: admin.credential.cert(credentials),
 });
